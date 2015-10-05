@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				411577901BC0B4FF00DD0066 /* AppDelegate.swift */,
+				41F5C80E1BC1FEE0001E870B /* MemeEditorViewController.swift */,
 				411577941BC0B4FF00DD0066 /* Main.storyboard */,
 				411577971BC0B4FF00DD0066 /* Assets.xcassets */,
 				411577991BC0B4FF00DD0066 /* LaunchScreen.storyboard */,
 				4115779C1BC0B4FF00DD0066 /* Info.plist */,
-				41F5C80E1BC1FEE0001E870B /* MemeEditorViewController.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moaz.ahmed.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -263,7 +263,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moaz.ahmed.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
