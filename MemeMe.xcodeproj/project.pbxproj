@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		411577911BC0B4FF00DD0066 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411577901BC0B4FF00DD0066 /* AppDelegate.swift */; };
-		411577931BC0B4FF00DD0066 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411577921BC0B4FF00DD0066 /* ViewController.swift */; };
 		411577961BC0B4FF00DD0066 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411577941BC0B4FF00DD0066 /* Main.storyboard */; };
 		411577981BC0B4FF00DD0066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411577971BC0B4FF00DD0066 /* Assets.xcassets */; };
 		4115779B1BC0B4FF00DD0066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411577991BC0B4FF00DD0066 /* LaunchScreen.storyboard */; };
+		41F5C80F1BC1FEE0001E870B /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5C80E1BC1FEE0001E870B /* MemeEditorViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4115778D1BC0B4FF00DD0066 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		411577901BC0B4FF00DD0066 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		411577921BC0B4FF00DD0066 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		411577951BC0B4FF00DD0066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		411577971BC0B4FF00DD0066 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4115779A1BC0B4FF00DD0066 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4115779C1BC0B4FF00DD0066 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41F5C80E1BC1FEE0001E870B /* MemeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				411577901BC0B4FF00DD0066 /* AppDelegate.swift */,
-				411577921BC0B4FF00DD0066 /* ViewController.swift */,
 				411577941BC0B4FF00DD0066 /* Main.storyboard */,
 				411577971BC0B4FF00DD0066 /* Assets.xcassets */,
 				411577991BC0B4FF00DD0066 /* LaunchScreen.storyboard */,
 				4115779C1BC0B4FF00DD0066 /* Info.plist */,
+				41F5C80E1BC1FEE0001E870B /* MemeEditorViewController.swift */,
 			);
 			path = MemeMe;
 			sourceTree = "<group>";
@@ -135,8 +135,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				411577931BC0B4FF00DD0066 /* ViewController.swift in Sources */,
 				411577911BC0B4FF00DD0066 /* AppDelegate.swift in Sources */,
+				41F5C80F1BC1FEE0001E870B /* MemeEditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +251,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moaz.ahmed.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -262,6 +263,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moaz.ahmed.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -284,6 +286,7 @@
 				411577A11BC0B4FF00DD0066 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
