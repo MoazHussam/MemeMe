@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MemeEditorViewController: UIViewController, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //Outlets
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     //global variables
     var isViewTransitionedUp = false    //flag to prevent multiple calls for keyboardWillShow notification
@@ -25,6 +26,9 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         //set text fields delegates
         topTextField.delegate = self
         bottomTextField.delegate = self
+        
+        //find it camera exits
+         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -75,6 +79,24 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
         keyboardHeight = keyboardSize.height
     }
     
+    /****************** Meme generation and image handling *****************/
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        //dismiss image picker view controller
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.imageView.image = image
+            self.imageView.contentMode = .ScaleAspectFill
+        }
+    }
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        
+        //dismiss picker
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
     /******************************* Action Handlers **********************/
     
@@ -83,8 +105,27 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate {
     @IBAction func cancelButton(sender: AnyObject) {
     }
     @IBAction func cameraButton(sender: AnyObject) {
+        
+        //take photo from camera
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .Camera
+        
+        //show camera interface
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
-    @IBAction func photoAlbumButton(sender: AnyObject) {
+    @IBAction func photoLibraryButton(sender: AnyObject) {
+        
+        //choose photo from photo library
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .PhotoLibrary
+        //TODO: this will work only in portrait in ipad and must look for solution
+        
+        
+        //TODO: check if user denied resource access
+        //show image picker
+        self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     
