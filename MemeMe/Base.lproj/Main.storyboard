@@ -17,27 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvs-hr-NWO">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="csk-8o-UlK"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Meme Editor" id="J4l-Ee-3Le">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="n3x-88-eKz">
-                                            <connections>
-                                                <action selector="shareButton:" destination="hBf-eT-Dlr" id="gCO-0B-dHe"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cQp-9d-YNT">
-                                            <connections>
-                                                <action selector="cancelButton:" destination="hBf-eT-Dlr" id="EXB-7r-SSN"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ZT-rV-M2l">
                                 <rect key="frame" x="20" y="112" width="560" height="30"/>
                                 <animations/>
@@ -59,6 +38,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-KN-aad">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kag-lp-Yrb">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <animations/>
@@ -78,11 +62,27 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="87x-Vw-WIO"/>
                                 </items>
                             </toolbar>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-KN-aad">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvs-hr-NWO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="csk-8o-UlK"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Meme Editor" id="J4l-Ee-3Le">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="n3x-88-eKz">
+                                            <connections>
+                                                <action selector="shareButton:" destination="hBf-eT-Dlr" id="gCO-0B-dHe"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cQp-9d-YNT">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="hBf-eT-Dlr" id="EXB-7r-SSN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
