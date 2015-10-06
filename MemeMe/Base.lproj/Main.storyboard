@@ -17,28 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvs-hr-NWO">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="csk-8o-UlK"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Meme Editor" id="J4l-Ee-3Le">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="n3x-88-eKz">
-                                            <connections>
-                                                <action selector="shareButton:" destination="hBf-eT-Dlr" id="gCO-0B-dHe"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cQp-9d-YNT">
-                                            <connections>
-                                                <action selector="cancelButton:" destination="hBf-eT-Dlr" id="EXB-7r-SSN"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-KN-aad">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XzZ-KN-aad">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,7 +29,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="avR-US-oUy"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8b-SA-XG8">
@@ -82,29 +62,49 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="87x-Vw-WIO"/>
                                 </items>
                             </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvs-hr-NWO">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="csk-8o-UlK"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Meme Editor" id="J4l-Ee-3Le">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="n3x-88-eKz">
+                                            <connections>
+                                                <action selector="shareButton:" destination="hBf-eT-Dlr" id="gCO-0B-dHe"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cQp-9d-YNT">
+                                            <connections>
+                                                <action selector="cancelButton:" destination="hBf-eT-Dlr" id="EXB-7r-SSN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Kag-lp-Yrb" firstAttribute="leading" secondItem="fjM-Dr-CRD" secondAttribute="leading" id="0xZ-S5-H3O"/>
-                            <constraint firstItem="XzZ-KN-aad" firstAttribute="trailing" secondItem="Kag-lp-Yrb" secondAttribute="trailing" id="6bF-Lj-w1s"/>
+                            <constraint firstItem="XzZ-KN-aad" firstAttribute="bottom" secondItem="Kag-lp-Yrb" secondAttribute="top" id="6oM-4G-0k1"/>
                             <constraint firstItem="0ZT-rV-M2l" firstAttribute="top" secondItem="Cvs-hr-NWO" secondAttribute="bottom" constant="48" id="7Ne-xR-BS3"/>
                             <constraint firstItem="0ZT-rV-M2l" firstAttribute="leading" secondItem="fjM-Dr-CRD" secondAttribute="leadingMargin" id="8aY-7D-Qpb"/>
+                            <constraint firstItem="XzZ-KN-aad" firstAttribute="leading" secondItem="Kag-lp-Yrb" secondAttribute="leading" id="9Cj-EL-vg3"/>
+                            <constraint firstAttribute="trailing" secondItem="XzZ-KN-aad" secondAttribute="trailing" id="DjT-ys-LHr"/>
                             <constraint firstItem="Kag-lp-Yrb" firstAttribute="top" secondItem="A8b-SA-XG8" secondAttribute="bottom" constant="48" id="E0M-B5-BKV"/>
+                            <constraint firstItem="XzZ-KN-aad" firstAttribute="leading" secondItem="Cvs-hr-NWO" secondAttribute="leading" id="GJg-9G-lWb"/>
                             <constraint firstItem="Kag-lp-Yrb" firstAttribute="bottom" secondItem="JaV-Gd-n4J" secondAttribute="top" id="M7x-vc-mNT"/>
                             <constraint firstItem="A8b-SA-XG8" firstAttribute="leading" secondItem="0ZT-rV-M2l" secondAttribute="leading" id="NDB-hV-tt0"/>
                             <constraint firstItem="A8b-SA-XG8" firstAttribute="trailing" secondItem="0ZT-rV-M2l" secondAttribute="trailing" id="Q4r-Wn-XP1"/>
-                            <constraint firstItem="XzZ-KN-aad" firstAttribute="top" secondItem="Cvs-hr-NWO" secondAttribute="bottom" id="aSC-iW-81j"/>
-                            <constraint firstAttribute="trailing" secondItem="XzZ-KN-aad" secondAttribute="trailing" id="ez9-Y7-Cg4"/>
-                            <constraint firstItem="Kag-lp-Yrb" firstAttribute="leading" secondItem="XzZ-KN-aad" secondAttribute="leading" id="j7l-qA-87a"/>
-                            <constraint firstItem="Cvs-hr-NWO" firstAttribute="leading" secondItem="XzZ-KN-aad" secondAttribute="leading" id="kJO-0Q-Ary"/>
+                            <constraint firstItem="XzZ-KN-aad" firstAttribute="trailing" secondItem="Kag-lp-Yrb" secondAttribute="trailing" id="Y4g-Ai-5JE"/>
+                            <constraint firstItem="XzZ-KN-aad" firstAttribute="top" secondItem="Cvs-hr-NWO" secondAttribute="bottom" id="geO-Be-DbG"/>
                             <constraint firstItem="Cvs-hr-NWO" firstAttribute="centerX" secondItem="0ZT-rV-M2l" secondAttribute="centerX" id="muR-7A-dBg"/>
-                            <constraint firstItem="Kag-lp-Yrb" firstAttribute="top" secondItem="XzZ-KN-aad" secondAttribute="bottom" id="rYm-cb-Cz7"/>
-                            <constraint firstItem="Cvs-hr-NWO" firstAttribute="trailing" secondItem="XzZ-KN-aad" secondAttribute="trailing" id="rom-gH-Rnw"/>
                             <constraint firstItem="Cvs-hr-NWO" firstAttribute="top" secondItem="fjM-Dr-CRD" secondAttribute="top" id="v5R-19-Dd1"/>
+                            <constraint firstItem="XzZ-KN-aad" firstAttribute="trailing" secondItem="Cvs-hr-NWO" secondAttribute="trailing" id="vAm-SO-iqA"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bottomTextField" destination="A8b-SA-XG8" id="zkU-Ut-wKE"/>
