@@ -16,6 +16,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var toolBar: UIToolbar!
     
     //global variables
     var isViewTransitionedUp = false    //flag to prevent multiple calls for keyboardWillShow notification
@@ -96,11 +97,56 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         //dismiss picker
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    func createMemeImageFromView() -> UIImage {
+        
+        //hide toolbar and navigation bar
+        self.navigationBar.hidden = true
+        self.toolBar.hidden = true
+        
+        // Render on-screen view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame,
+            afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //show both bars again
+        self.navigationBar.hidden = false
+        self.toolBar.hidden = false
+
+        return memedImage
+    }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    func saveMeme() -> Meme? {
+        
+        
+        if let originalImage = imageView.image {
+            let memedImage = createMemeImageFromView()
+            let meme = Meme(bottomText: bottomTextField.text!, topText: topTextField.text!, originalImage: originalImage, memedImage: memedImage)
+            return meme
+        }
+        return nil
+    }
     
     
     /******************************* Action Handlers **********************/
     
     @IBAction func shareButton(sender: UIBarButtonItem) {
+        
+        //save meme object first
+        let meme = saveMeme()?.memedImage
+        
+        
+        if let memeImage = meme {
+            //create an activity view
+            let activityView = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
+            activityView.popoverPresentationController?.barButtonItem = sender
+            
+            //show controller
+            self.presentViewController(activityView, animated: true, completion: nil)
+        }
     }
     @IBAction func cancelButton(sender: AnyObject) {
     }
