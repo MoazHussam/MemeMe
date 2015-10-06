@@ -118,7 +118,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     }
     func saveMeme() -> Meme? {
         
-        
+        //create a new meme and return it
         if let originalImage = imageView.image {
             let memedImage = createMemeImageFromView()
             let meme = Meme(bottomText: bottomTextField.text!, topText: topTextField.text!, originalImage: originalImage, memedImage: memedImage)
@@ -146,6 +146,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         }
     }
     @IBAction func cancelButton(sender: AnyObject) {
+        self.imageView.image = nil
     }
     @IBAction func cameraButton(sender: AnyObject) {
         
@@ -166,8 +167,9 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         //TODO: this will work only in portrait in ipad and must look for solution
         
         
-        //TODO: check if user denied resource access
+        //TODO: check if user denied resource access        
         //show image picker
+        imagePicker.modalPresentationStyle = .OverCurrentContext
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     
