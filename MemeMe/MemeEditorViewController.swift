@@ -16,6 +16,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var photoLibraryButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
     
     //global variables
@@ -51,7 +52,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         unsubscribeoKeyboardNotifications()
     }
     
-    /******************************* keyboard Behavior *****************/
+    /******************** keyboard and textFields Behavior *****************/
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
 
@@ -101,7 +102,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imageView.image = image
-            self.imageView.contentMode = .ScaleAspectFill
+            self.imageView.contentMode = .ScaleAspectFit
         }
     }
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -160,28 +161,21 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBAction func cancelButton(sender: AnyObject) {
         self.imageView.image = nil
     }
-    @IBAction func cameraButton(sender: AnyObject) {
-        
-        //take photo from camera
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .Camera
-        
-        //show camera interface
-        self.presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    @IBAction func photoLibraryButton(sender: AnyObject) {
+    @IBAction func choosePhoto(sender: UIBarButtonItem) {
         
         //choose photo from photo library
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .PhotoLibrary
-        //TODO: this will work only in portrait in ipad and must look for solution
         
+        if sender == cameraButton {
+            imagePicker.sourceType = .Camera
+            
+        }else if sender == photoLibraryButton {
+            imagePicker.sourceType = .PhotoLibrary
+            imagePicker.modalPresentationStyle = .OverCurrentContext  //to enable landscape mode on iPad
+        }
         
-        //TODO: check if user denied resource access        
-        //show image picker
-        imagePicker.modalPresentationStyle = .OverCurrentContext
+        //show image choosing interface
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
     

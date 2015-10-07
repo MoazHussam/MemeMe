@@ -29,13 +29,13 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="25V-yK-jqF"/>
                                     <barButtonItem systemItem="camera" id="K0L-eW-Vel">
                                         <connections>
-                                            <action selector="cameraButton:" destination="hBf-eT-Dlr" id="biS-bX-N3f"/>
+                                            <action selector="choosePhoto:" destination="hBf-eT-Dlr" id="KbS-y7-Gzh"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="UYY-WK-O9b"/>
                                     <barButtonItem image="photoLibrary" id="NSe-ae-i8I" userLabel="Photo Library">
                                         <connections>
-                                            <action selector="photoLibraryButton:" destination="hBf-eT-Dlr" id="Uca-re-aNA"/>
+                                            <action selector="choosePhoto:" destination="hBf-eT-Dlr" id="7ZV-Pp-x38"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="87x-Vw-WIO"/>
@@ -105,13 +105,13 @@
                             <constraint firstItem="XzZ-KN-aad" firstAttribute="trailing" secondItem="Cvs-hr-NWO" secondAttribute="trailing" id="vAm-SO-iqA"/>
                         </constraints>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="bottomTextField" destination="A8b-SA-XG8" id="zkU-Ut-wKE"/>
                         <outlet property="cameraButton" destination="K0L-eW-Vel" id="te4-vv-zwU"/>
                         <outlet property="imageView" destination="XzZ-KN-aad" id="la9-3H-Rc6"/>
                         <outlet property="navigationBar" destination="Cvs-hr-NWO" id="dMN-nP-JcA"/>
-                        <outlet property="toolBar" destination="Kag-lp-Yrb" id="6NW-fr-YO1"/>
+                        <outlet property="photoLibraryButton" destination="NSe-ae-i8I" id="jyo-js-j9D"/>
+                        <outlet property="toolBar" destination="Kag-lp-Yrb" id="hjJ-GG-rLJ"/>
                         <outlet property="topTextField" destination="0ZT-rV-M2l" id="8Cz-US-SeM"/>
                     </connections>
                 </viewController>
