@@ -20,7 +20,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
     
     //global variables
     var isViewTransitionedUp = false    //flag to prevent multiple calls for keyboardWillShow notification
-    var keyboardHeight: CGFloat = 0.0   //to make sure height transitioned down is the same as transitioned up
+    var keyboardHeight: CGFloat = 0.0   //to make sure height transitioned down the same as transitioned up
     
     override func viewDidLoad() {
         
@@ -28,7 +28,19 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         topTextField.delegate = self
         bottomTextField.delegate = self
         
-        //find it camera exits
+        //set textField string attributes
+        let textAttributes = [
+            NSStrokeColorAttributeName: UIColor.blackColor(),
+            NSStrokeWidthAttributeName: -3.0,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+            NSForegroundColorAttributeName: UIColor.whiteColor()]
+
+        topTextField.defaultTextAttributes = textAttributes
+        topTextField.textAlignment = .Center
+        bottomTextField.defaultTextAttributes = textAttributes
+        bottomTextField.textAlignment = .Center
+        
+        //find if camera exits
          cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
     }
     
