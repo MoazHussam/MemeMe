@@ -11,8 +11,8 @@
 		411577961BC0B4FF00DD0066 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411577941BC0B4FF00DD0066 /* Main.storyboard */; };
 		411577981BC0B4FF00DD0066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 411577971BC0B4FF00DD0066 /* Assets.xcassets */; };
 		4115779B1BC0B4FF00DD0066 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411577991BC0B4FF00DD0066 /* LaunchScreen.storyboard */; };
-		41F5C80F1BC1FEE0001E870B /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5C80E1BC1FEE0001E870B /* MemeEditorViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		41FFD1781BC359AB000C8C46 /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFD1771BC359AB000C8C46 /* MemeModel.swift */; settings = {ASSET_TAGS = (); }; };
+		41F5C80F1BC1FEE0001E870B /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F5C80E1BC1FEE0001E870B /* MemeEditorViewController.swift */; };
+		41FFD1781BC359AB000C8C46 /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FFD1771BC359AB000C8C46 /* MemeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +99,7 @@
 					4115778C1BC0B4FF00DD0066 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 5Q89ZG6CM6;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -256,6 +257,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moaz.ahmed.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -269,6 +271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.moaz.ahmed.MemeMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

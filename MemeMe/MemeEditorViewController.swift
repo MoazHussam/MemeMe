@@ -61,8 +61,8 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         return false
     }
     func subscribeToKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "transitionViewUp:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "transitionViewDown:", name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.transitionViewUp(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MemeEditorViewController.transitionViewDown(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     func unsubscribeoKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -120,7 +120,7 @@ class MemeEditorViewController: UIViewController, UITextFieldDelegate, UIImagePi
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame,
             afterScreenUpdates: true)
-        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         //show both bars again
